@@ -1,0 +1,67 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+
+# Packages / distributions
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+env.bak/
+
+# Environment / secrets
+.env
+.env.* 
+.local_settings.py
+
+# Django
+*.log
+db.sqlite3
+media/
+staticfiles/        # collected static files (STATIC_ROOT)
+# If you collect into "static/" uncomment next line
+# static/
+
+# Migrations caches
+**/migrations/__pycache__/
+
+# Testing / coverage
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.pytest_cache/
+
+# Type checkers / caches
+.mypy_cache/
+.pyre/
+
+# Node / frontend (if present)
+node_modules/
+
+# OS / editor / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs, temporary files
+*.log
+*.tmp
+*.swp
+*~
+
+# Database dumps (optional)
+*.sql
+*.dump
