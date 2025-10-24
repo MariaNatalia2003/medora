@@ -65,3 +65,6 @@ Thumbs.db
 # Database dumps (optional)
 *.sql
 *.dump
+
+# VS Code
+.vscode/
