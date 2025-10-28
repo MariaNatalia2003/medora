@@ -86,7 +86,7 @@ medora/
 
 ```bash
     # 1. Clone o repositório
-    git clone https://github.com/seuusuario/medora.git
+    git clone https://github.com/MariaNatalia2003/medora.git
     cd medora
 
     # 2. Crie e ative o ambiente virtual

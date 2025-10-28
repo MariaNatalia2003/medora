@@ -24,6 +24,7 @@ class Specialty(models.Model):
 class Doctor(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
+    # crm = XXXXXX-CRM/SP
     crm = models.CharField(max_length=20, unique=True)
     specialty = models.ForeignKey(Specialty, on_delete=models.CASCADE)
     phone_number = models.CharField(max_length=20, blank=True)
@@ -66,6 +67,7 @@ class Doctor(models.Model):
 class Patient(models.Model):
     name = models.CharField(max_length=120)
     created_at = models.DateTimeField(auto_now_add=True)
+    # cfp = XXX.XXX.XXX-XX
     cpf = models.CharField(max_length=14, unique=True)
     birth_date = models.DateField()
     phone_number = models.CharField(max_length=20, blank=True)
