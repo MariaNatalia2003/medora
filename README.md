@@ -53,10 +53,10 @@ medora/
 │ ├── views.py # Lógica de listagem e criação de consultas
 │ ├── urls.py
 │ ├── forms.py
-│ └── templates/agenda/
+│ ├── templates/agenda/
 │ ├── agenda_list.html
 │ └── consulta_form.html
-└── static/
+├── static/
 ├── css, js, images
 ├── .gitignore
 ├── LICENSE
