@@ -21,7 +21,12 @@ class DoctorRegistrationForm(forms.ModelForm):
         """
         model = Doctor
         # Define os campos do modelo que devem ser incluídos no formulário
-        fields = ['crm', 'specialty', 'phone_number', 'start_time', 'end_time']
+        fields = ['name', 
+                  'crm', 
+                  'specialty', 
+                  'phone_number', 
+                  'start_time', 
+                  'end_time']
 
     def clean(self):
         """

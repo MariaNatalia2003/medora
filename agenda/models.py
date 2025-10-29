@@ -23,6 +23,7 @@ class Specialty(models.Model):
 
 class Doctor(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=150, blank=False, default="")
     created_at = models.DateTimeField(auto_now_add=True)
     # crm = XXXXXX-CRM/SP
     crm = models.CharField(max_length=20, unique=True)
