@@ -1,7 +1,77 @@
-<h2>Cadastro de Médico</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Registrar</button>
-</form>
-<p>Já tem conta? <a href="{% url 'login' %}">Faça login</a></p>
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cadastro de Médico | Medora</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm mb-4">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">Medora</a>
+      </div>
+    </nav>
+
+    <!-- Container principal -->
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+          <div class="card shadow-sm border-0">
+            <div class="card-body p-4">
+              <h2 class="text-center mb-4 text-primary fw-semibold">
+                Cadastro de Médico
+              </h2>
+
+              <form method="post" novalidate>
+                {% csrf_token %}
+
+                <!-- Exibe mensagens de erro globais -->
+                {% if form.non_field_errors %}
+                  <div class="alert alert-danger">
+                    {{ form.non_field_errors }}
+                  </div>
+                {% endif %}
+
+                <!-- Renderiza os campos do formulário -->
+                {% for field in form %}
+                  <div class="mb-3">
+                    <label class="form-label fw-semibold" for="{{ field.id_for_label }}">
+                      {{ field.label }}
+                    </label>
+                    {{ field }}
+                    {% if field.help_text %}
+                      <div class="form-text">{{ field.help_text }}</div>
+                    {% endif %}
+                    {% for error in field.errors %}
+                      <div class="text-danger small">{{ error }}</div>
+                    {% endfor %}
+                  </div>
+                {% endfor %}
+
+                <div class="d-grid">
+                  <button type="submit" class="btn btn-primary btn-lg">
+                    Registrar
+                  </button>
+                </div>
+              </form>
+
+              <p class="mt-4 text-center">
+                Já tem conta?
+                <a href="{% url 'login' %}" class="text-decoration-none fw-semibold text-primary">
+                  Faça login
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% include 'global_templates/footer.html'%}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
